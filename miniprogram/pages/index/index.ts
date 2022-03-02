@@ -1,6 +1,8 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>()
+const LongText = ["1\n2\n3\n4\n5\n\n\n\n\n\n6\n7\n","none"]
+const Wishes = ["good","best","juan","like","wonderful","beautiful","extraordinary"]
 
 Page({
   data: {
@@ -9,7 +11,10 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    text_shown : "init",
+    text_shown_id : 0,
+    wish_shown : "No wish"
   },
   // 事件处理函数
   bindViewTap() {
@@ -45,5 +50,17 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  change(){
+    this.setData({
+      text_shown : LongText[this.data.text_shown_id],
+      text_shown_id : 1-this.data.text_shown_id
+    })
+  },
+  get_wish(){
+  var id = Math.floor(Math.random()*7)
+  this.setData({
+    wish_shown : Wishes[id]
+  })
   }
 })
