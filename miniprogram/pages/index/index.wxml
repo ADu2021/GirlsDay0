@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<view class="container">
+
+<!-- <view class="container">
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">
       <view class="userinfo-avatar" bindtap="bindViewTap">
@@ -20,4 +21,28 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+</view> -->
+
+
+
+<view class="helloworld">
+
+<image class="background" src="../../res/Bridge.png" mode="aspectFill"></image>
+
+<text >
+  Hello World!
+</text>
+<text> The second line.</text>
+</view>
+
+<view class="context">
+  <text class="body">
+    <text>This is a body text. Hahaha Test test tesT.\n</text>
+    <text>这是一段中文 这是一段中文 这是一段中文 这是一段中文\n</text>
+  </text>
+  <text class="black_text">
+   <text>这是一些黑色的字\n</text>
+  </text>
+  
+
 </view>
