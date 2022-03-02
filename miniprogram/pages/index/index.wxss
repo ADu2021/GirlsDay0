@@ -26,14 +26,22 @@
   flex-direction: column;
 }
 
+.helloworld .title{
+  font-style: oblique;
+  font-size: 45rpx; 
+}
+
+
 .context{
   display: flex;
   padding: 80rpx;
   flex-direction: column;    
   /* flex-direction 默认是横排 */
-
-  
 }
+
+
+
+
 
 .context .body{
   font-size : 50rpx;

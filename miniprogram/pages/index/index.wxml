@@ -26,28 +26,14 @@
 
 
 <view class="helloworld">
-
-<image class="background" src="../../res/Bridge.png" mode="aspectFill"></image>
-
-<text >
-  Hello World!
-</text>
-<text> The second line.</text>
+<image class="background" src="../../res/BG_pink.png" mode="aspectFill"></image>
+<text class = "title"> \n\n\n来自紫一的祝福：\n\n</text> 
+<!-- 上面的这行字可以P在背景里，不然会被划上去= = -->
 </view>
 
 <view class="context">
-  <text class="body">
-    <text>This is a body text. Hahaha Test test tesT.\n</text>
-    <text>这是一段中文 这是一段中文 这是一段中文 这是一段中文\n</text>
-  </text>
-  <text class="black_text">
-   <text>这是一些黑色的字\n</text>
-  </text>
-  <button class="button1" bindtap="change">Change</button>
-  <button bindtap="get_wish">Get A Wish</button>
+  <button class="bt_wish" plain="true" bindtap="get_wish">Get A Wish</button>
   <text class="wish_text">{{wish_shown}}</text>
-  <text class="long_text">{{text_shown}}</text>
-
 
 
 </view>
