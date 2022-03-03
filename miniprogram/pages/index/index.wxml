@@ -32,7 +32,7 @@
 </view>
 
 <view class="context">
-  <button class="bt_wish" plain="true" bindtap="get_wish">Get A Wish</button>
+  <button class="bt_wish" plain="true" bindtap="get_wish">点这里~</button>
   <text class="wish_text">{{wish_shown}}</text>
 
 
