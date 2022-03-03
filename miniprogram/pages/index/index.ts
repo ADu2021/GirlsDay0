@@ -89,11 +89,40 @@ Page({
     // 弹出消息
     return
   }
+  
+  this.fade()
   var id = Math.floor(Math.random()*Wishes.length)
   this.setData({
-    wish_shown : Wishes[id] + '\n\n' + this.data.wish_shown
+    wish_shown : Wishes[id] //+ '\n\n' + this.data.wish_shown
   })
   this.data.wish_history.push(this.data.wish_shown)
   Wishes.splice(id,1)
+  this.show()
+  },
+
+  show(){
+    var animation = wx.createAnimation({
+      duration: 3000,
+      timingFunction: 'ease',
+      delay: 0
+    });
+    animation.opacity(1).step()
+    this.setData({
+      ani:  animation.export()
+    })
+  },
+
+  fade(){
+    var animation = wx.createAnimation({
+      duration: 0,
+      timingFunction: 'ease',
+      delay: 0
+    });
+    animation.opacity(0).step()
+    this.setData({
+      ani:  animation.export()
+    })
   }
+  
+
 })

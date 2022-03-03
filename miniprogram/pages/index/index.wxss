@@ -67,6 +67,8 @@
 .context .wish_text{
   font-family: 'hand';
   font-size: 50rpx;
+  opacity: 0;
+  padding: 50rpx;
 }
 
 @font-face {
