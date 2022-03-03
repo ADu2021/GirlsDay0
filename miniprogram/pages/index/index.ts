@@ -40,7 +40,8 @@ Page({
     text_shown : "init",
     text_shown_id : 0,
     wish_shown : "A wave of wishes is coming...",
-    wish_history : [] as Array<string>
+    wish_history : [] as Array<string>,
+    button_enable: true,
   },
   // 事件处理函数
   bindViewTap() {
@@ -85,26 +86,31 @@ Page({
   },
 
   get_wish(){
-  if(Wishes.length == 0){
-    // 弹出消息
-    return
-  }
-  
-  this.fade()
-  var id = Math.floor(Math.random()*Wishes.length)
-  this.setData({
-    wish_shown : Wishes[id] //+ '\n\n' + this.data.wish_shown
-  })
-  this.data.wish_history.push(this.data.wish_shown)
-  Wishes.splice(id,1)
-  this.show()
+    if(Wishes.length == 0){
+      // 弹出消息
+      return
+    }
+    if(this.data.button_enable == false){
+      return
+    }
+    this.fade()
+    setTimeout(() => this.show(), 100)
+    var id = Math.floor(Math.random()*Wishes.length)
+    this.setData({
+      wish_shown : Wishes[id], //+ '\n\n' + this.data.wish_shown
+      button_enable : false
+    })
+    setTimeout(() => this.setData({button_enable:true}), 2720)
+    this.data.wish_history.push(this.data.wish_shown)
+    Wishes.splice(id,1)
+    //this.show()
   },
 
   show(){
     var animation = wx.createAnimation({
-      duration: 3000,
+      duration: 2700,
       timingFunction: 'ease',
-      delay: 0
+      delay: 10
     });
     animation.opacity(1).step()
     this.setData({
