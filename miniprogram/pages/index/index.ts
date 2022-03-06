@@ -68,6 +68,9 @@ Page({
     button_enable: true,
     button_shown: "换一换~"
   },
+  onShareAppMessage() {
+    // return custom share data when user share.
+  },
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
