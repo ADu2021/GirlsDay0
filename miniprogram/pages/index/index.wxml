@@ -27,15 +27,15 @@
 
 <view class="helloworld">
 <image class="background" src="../../res/BG_pink.png" mode="aspectFill"></image>
-<text class = "title"> \n\n\n来自紫一的祝福：\n\n</text> 
+<text class = "title"> \n\n\n来自紫一的祝福：\n\n\n</text> 
 <!-- 上面的这行字可以P在背景里，不然会被划上去= = -->
 </view>
 
 <view class="context">
-  <button class="bt_wish" plain="true" bindtap="get_wish">换一换~</button>
+  <button class="bt_wish" plain="true" bindtap="get_wish">{{button_shown}}</button>
   
   
-  <text class="wish_text" user-select="{{true}}" animation="{{ani}}">{{wish_shown}}</text>
+  <text class="wish_text" user-select="{{true}}" animation="{{ani}}">\n{{wish_shown}}</text>
 
 
 </view>
